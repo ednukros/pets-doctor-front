@@ -1,0 +1,26 @@
+<div class="row mt-5">
+  <div class="col-lg-4 offset-lg-4">
+    <div class="card border-secondary mb-3" style="max-width: 30rem;">
+      <div class="card-header text-center bg-secondary text-white fw-bold  ">Añadir paciente</div>
+      <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="addPatient()">
+          <input formControlName="name" type="text" class="form-control mt-2" placeholder="Nombre del paciente">      
+          <small *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched" id="emailHelp" class="form-text text-muted">Introduce el nombre de la mascota</small>
+          <input type="text" class="form-control mt-2" placeholder="Especie">      
+          <input  type="date" class="form-control mt-2" placeholder="Fecha de nacimiento">
+          <input  type="image" class="form-control mt-2" placeholder="Añadir imagen">
+          <input  type="date" class="form-control mt-2" placeholder="Próxima cita">
+          <input formControlName="owner" type="text" class="form-control mt-2" placeholder="Nombre del propietario">
+          <small *ngIf="form.get('owner')?.hasError('required') && form.get('owner')?.touched" id="emailHelp" class="form-text text-muted">Introduce el nombre del propietario</small>
+          <input formControlName="phoneNumber" type="number" class="form-control mt-2" placeholder="Teléfono de contacto">
+          <small *ngIf="form.get('phoneNumber')?.hasError('required')&& form.get('phoneNumber')?.touched" id="emailHelp" class="form-text text-muted">Introduce un teléfono de contacto</small>
+          <input formControlName="email" type="email" class="form-control mt-2" placeholder="Email de contacto">
+          <small *ngIf="form.get('email')?.hasError('required')&& form.get('email')?.touched" id="emailHelp" class="form-text text-muted">Introduce un email de contacto</small>
+
+          <div class="d-flex justify-content-around  mt-4">
+            <button type="submit"   [disabled]="form.invalid"  class="btn btn-primary">Aceptar</button>
+          <button type="button" class="btn btn-secondary" routerLink="/">Cancelar</button>
+          </div>
+          </form>
+    </div>
+  </div>

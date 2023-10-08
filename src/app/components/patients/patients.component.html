@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-end">
+    <h3 class="mt-4 mb-3">Listado de pacientes y citas</h3>
+    <button type="button" class=" btn btn-primary btn-xss" routerLink="/añadir" >Nuevo paciente</button>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Especie</th>
+        <th scope="col">Próxima cita</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+      <tr *ngFor="let item of listPatients" class="table-active">
+        <th>{{ item.id }}</th>
+        <td>{{ item.name }}</td>
+        <td>{{ item.specie }}</td>
+        <td>{{ item.appointment }}</td>
+        <td>
+            <button type="button" class="btn btn-info btn-sm">Ver</button>
+            <button type="button" class="btn btn-warning btn-sm ms-2" routerLink="/editar/{{item.id}}">Editar</button>
+            <button type="button" class="btn btn-secondary btn-sm ms-2">Borrar</button>
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+</div>
