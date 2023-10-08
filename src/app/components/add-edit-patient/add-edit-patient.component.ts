@@ -27,10 +27,19 @@ export class AddEditPatientComponent implements OnInit {
   }
 
   addPatient() {
-    // const patient: Patient = {
-    //   id:
-    // }
-    console.log(this.form);
+   
+    const patient: Patient = {
+      name: this.form.value.name,
+      specie: this.form.value.specie,
+      birth: this.form.value.birth,
+      image: this.form.value.image,
+      appointment: this.form.value.appointment,
+      owner: this.form.value.owner,
+      phoneNumber: this.form.value.phoneNumber,
+      email: this.form.value.email,
+    }
+    
+    console.log(patient);
     
   }
 }
