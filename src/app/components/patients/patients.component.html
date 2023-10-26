@@ -6,16 +6,16 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">Id</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Especie</th>
-        <th scope="col">Próxima cita</th>
+        <th class="text-white" scope="col">Id</th>
+        <th class="text-white" scope="col">Nombre</th>
+        <th class="text-white" scope="col">Especie</th>
+        <th class="text-white" scope="col">Próxima cita</th>
       </tr>
     </thead>
     <tbody>
 
 
-      <tr *ngFor="let item of listPatients" class="table-active">
+      <tr *ngFor="let item of listPatients" class="table-primary">
         <th>{{ item.id }}</th>
         <td>{{ item.name }}</td>
         <td>{{ item.specie }}</td>
