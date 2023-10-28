@@ -3,31 +3,35 @@
     <h3 class="mt-4 mb-3">Listado de pacientes y citas</h3>
     <button type="button" class=" btn btn-primary btn-xss" routerLink="/añadir" >Nuevo paciente</button>
   </div>
-  <table class="table table-hover">
+  <table *ngIf="listPatients.length > 0" class="table table-hover">
     <thead>
       <tr>
         <th class="text-white" scope="col">Id</th>
         <th class="text-white" scope="col">Nombre</th>
         <th class="text-white" scope="col">Especie</th>
+        <th class="text-white" scope="col">Raza</th>
         <th class="text-white" scope="col">Próxima cita</th>
       </tr>
     </thead>
     <tbody>
 
 
-      <tr *ngFor="let item of listPatients" class="table-primary">
-        <th>{{ item.id }}</th>
-        <td>{{ item.name }}</td>
-        <td>{{ item.specie }}</td>
-        <td>{{ item.appointment }}</td>
+      <tr *ngFor="let patient of listPatients" class="table-primary">
+        <th>{{ patient.id }}</th>
+        <td>{{ patient.name }}</td>
+        <td>{{ patient.species }}</td>
+        <td>{{ patient.race }}</td>
+
+        <td>{{ patient.next_appointment }}</td>
         <td>
             <button type="button" class="btn btn-info btn-sm">Ver</button>
-            <button type="button" class="btn btn-warning btn-sm ms-2" routerLink="/editar/{{item.id}}">Editar</button>
-            <button type="button" class="btn btn-secondary btn-sm ms-2">Borrar</button>
+            <button   routerLink="/editar/{{patient.id}}" type="button" class="btn btn-warning btn-sm ms-2">Editar</button>
+            <button (click)="deletePatient(patient.id!)" type="button" class="btn btn-secondary btn-sm ms-2">Borrar</button>
         </td>
       </tr>
 
 
     </tbody>
   </table>
+  <h5 *ngIf="listPatients.length == 0">Sin pacientes actualmente.</h5>
 </div>

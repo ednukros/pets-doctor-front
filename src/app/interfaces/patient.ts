@@ -1,10 +1,11 @@
 export interface Patient {
     id?: number;
     name: string;
-    specie: string;
+    species: string;
+    race: string;
     birth: Date;
     image: string;
-    appointment: Date;
+    next_appointment: Date;
     owner: string;
     phoneNumber: number;
     email: string;

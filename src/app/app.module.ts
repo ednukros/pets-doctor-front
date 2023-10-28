@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +11,7 @@ import { AppComponent } from './app.component';
 //Modulos
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
+import { ToastrModule } from 'ngx-toastr';
 
 //componentes
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -20,13 +25,19 @@ import { PatientDetailsComponent } from './components/patient-details/patient-de
     NavbarComponent,
     PatientsComponent,
     AddEditPatientComponent,
-    PatientDetailsComponent
+    PatientDetailsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule, 
-    HttpClientModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

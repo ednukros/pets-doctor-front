@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Patient } from 'src/app/interfaces/patient';
 import { PatientsService } from 'src/app/services/patients-service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-patients',
@@ -9,32 +10,9 @@ import { PatientsService } from 'src/app/services/patients-service';
 })
 export class PatientsComponent implements OnInit {
 
-  listPatients: Patient[] = [
-    {
-      id: 1234,
-      name: 'Luffy',
-      specie: 'gato',
-      birth: new Date(2021, 5, 2),
-      image: '',
-      appointment: new Date(2023, 5, 2),
-      owner: 'Inma Sánchez',
-      phoneNumber: +34633396600,
-      email: 'isanmenarguez@gmail.com',
-    },
-    {
-      id: 5678,
-      name: 'Vera',
-      specie: 'gato',
-      birth: new Date(2021, 5, 2),
-      image: '',
-      appointment: new Date(2023, 5, 2),
-      owner: 'Cristina Cecilia',
-      phoneNumber: +34633396600,
-      email: 'isanmenarguez@gmail.com',
-    },
-  ]
+  listPatients: Patient[] = []
 
-  constructor(private _patientService: PatientsService) {
+  constructor(private _patientService: PatientsService, private toastr: ToastrService) {
 
 
 
@@ -44,10 +22,21 @@ export class PatientsComponent implements OnInit {
     this.getListPatients();
   }
 
-  getListPatients(){
-    this._patientService.getPatients().subscribe((data) =>{
-      console.log(data);
-      
+  getListPatients() {
+    this._patientService.getPatients().subscribe((data: Patient[]) => {
+      this.listPatients = data;
     })
+  }
+
+  deletePatient(id: number) {
+    this._patientService.deletePatient(id).subscribe(() => {
+
+        this.getListPatients();
+        this.toastr.warning('El paciente eliminado con éxito', 'Paciente eliminado')
+
+    })
+    
+   
+  
   }
 }

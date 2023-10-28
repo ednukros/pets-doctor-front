@@ -21,4 +21,20 @@ export class PatientsService {
     return this.http.get<Patient[]>(`${this.myAppUrl}${this.myApiUrl}`)
 
    }
+
+   deletePatient(id: number): Observable<void>{
+
+    return this.http.delete<void>(`${this.myAppUrl}${this.myApiUrl}${id}`)
+
+   }
+
+  //  editPatient(id:number): Observable<Patient[]> {
+
+  //   return this.http.put<void>(`${this.myAppUrl}${this.myApiUrl}`)
+  //  }
+
+  createPatient(patient: Patient): Observable<void> {
+    return this.http.post<void>(`${this.myAppUrl}${this.myApiUrl}`, patient)
+  }
+
 }
