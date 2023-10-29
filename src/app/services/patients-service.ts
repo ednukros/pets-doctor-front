@@ -37,4 +37,14 @@ export class PatientsService {
     return this.http.post<void>(`${this.myAppUrl}${this.myApiUrl}`, patient)
   }
 
+  getPatient(id: number): Observable<Patient>{
+
+    return this.http.get<Patient>(`${this.myAppUrl}${this.myApiUrl}${id}`)
+
+  }
+
+  updatePatient(id:number, patient: Patient): Observable<void>{
+    return this.http.put<void>(`${this.myAppUrl}${this.myApiUrl}${id}`, patient)
+  }
+
 }

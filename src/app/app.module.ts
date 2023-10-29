@@ -34,7 +34,7 @@ import { PatientDetailsComponent } from './components/patient-details/patient-de
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 10000,
+      timeOut: 3500,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     }),

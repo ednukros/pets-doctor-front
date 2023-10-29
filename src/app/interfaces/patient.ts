@@ -3,10 +3,8 @@ export interface Patient {
     name: string;
     species: string;
     race: string;
-    birth: Date;
-    image: string;
-    next_appointment: Date;
-    owner: string;
-    phoneNumber: number;
-    email: string;
+    // next_appointment: Date;
+    // owner: string;
+    // phoneNumber: number;
+    // email: string;
 }
