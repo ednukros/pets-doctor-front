@@ -9,11 +9,11 @@
           <input formControlName="species" type="text" class="form-control mt-2" placeholder="Especie">   
           <input formControlName="race" type="text" class="form-control mt-2" placeholder="Raza">      
    
-          <!-- <input  type="date" class="form-control mt-2" placeholder="Próxima cita"> -->
+          <input formControlName="next_appointment" type="date" class="form-control mt-2" placeholder="Próxima cita">
           <!-- <input formControlName="owner" type="text" class="form-control mt-2" placeholder="Nombre del propietario"> -->
           <!-- <small *ngIf="form.get('owner')?.hasError('required') && form.get('owner')?.touched" id="emailHelp" class="form-text text-muted">Introduce el nombre del propietario</small> -->
-          <!-- <input formControlName="phoneNumber" type="number" class="form-control mt-2" placeholder="Teléfono de contacto"> -->
-          <!-- <small *ngIf="form.get('phoneNumber')?.hasError('required')&& form.get('phoneNumber')?.touched" id="emailHelp" class="form-text text-muted">Introduce un teléfono de contacto</small> -->
+          <input formControlName="phoneNumber" type="number" class="form-control mt-2" placeholder="Teléfono de contacto">
+          <small *ngIf="form.get('phoneNumber')?.hasError('required')&& form.get('phoneNumber')?.touched" id="emailHelp" class="form-text text-muted">Introduce un teléfono de contacto</small>
           <!-- <input formControlName="email" type="email" class="form-control mt-2" placeholder="Email de contacto"> -->
           <!-- <small *ngIf="form.get('email')?.hasError('required')&& form.get('email')?.touched" id="emailHelp" class="form-text text-muted">Introduce un email de contacto</small> -->
 

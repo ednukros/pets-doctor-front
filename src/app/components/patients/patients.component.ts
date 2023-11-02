@@ -13,11 +13,7 @@ export class PatientsComponent implements OnInit {
   listPatients: Patient[] = []
 
   constructor(private _patientService: PatientsService, private toastr: ToastrService) {
-
-
-
-  }
-
+}
   ngOnInit(): void {
     this.getListPatients();
   }
@@ -25,7 +21,6 @@ export class PatientsComponent implements OnInit {
   getListPatients() {
     this._patientService.getPatients().subscribe((data: Patient[]) => {
       this.listPatients = data;
-      console.log(data);
       
     })
   }
