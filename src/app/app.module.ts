@@ -18,6 +18,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { PatientsComponent } from './components/patients/patients.component';
 import { AddEditPatientComponent } from './components/add-edit-patient/add-edit-patient.component';
 import { PatientDetailsComponent } from './components/patient-details/patient-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EmployeesComponent } from './components/employees/employees.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { PatientDetailsComponent } from './components/patient-details/patient-de
     PatientsComponent,
     AddEditPatientComponent,
     PatientDetailsComponent,
+    EmployeesComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import { PatientDetailsComponent } from './components/patient-details/patient-de
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     }),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
