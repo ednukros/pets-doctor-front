@@ -1,23 +1,25 @@
-<div class="container">
+<div class=" ">
   <div class="d-flex justify-content-between align-items-end">
-    <h3 class="mt-4 mb-3">Listado de pacientes y citas</h3>
-    <button type="button" class=" btn btn-primary btn-xss" routerLink="/añadir" >Nuevo paciente</button>
+    <h3 class="mt-4 mb-3">Pacientes </h3>
+    <button type="button" class="rounded-6 btn-primary btn-sm " routerLink="/añadir" >Dar de alta nuevo paciente</button>
   </div>
   <table *ngIf="listPatients.length > 0" class="table table-hover">
     <thead>
-      <tr>
-        <th class="text-white" scope="col">Id</th>
-        <th class="text-white" scope="col">Nombre</th>
-        <th class="text-white" scope="col">Especie</th>
-        <th class="text-white" scope="col">Raza</th>
-        <th class="text-white" scope="col">Próxima cita</th>
+      <tr class=" ">
+        <th class="border-0 " scope="col">Id</th>
+        <th class="border-0" scope="col">Nombre</th>
+        <th class="border-0" scope="col">Especie</th>
+        <th class="border-0" scope="col">Raza</th>
+        <th class="border-0" scope="col">Próxima cita</th>
+        <th class="border-0" scope="col">Teléfono</th>
+
 
       </tr>
     </thead>
     <tbody>
 
 
-      <tr *ngFor="let patient of listPatients" class="table-primary">
+      <tr *ngFor="let patient of listPatients" class="tr-data">
         <th>{{ patient.id }}</th>
         <td>{{ patient.name }}</td>
         <td>{{ patient.species }}</td>
@@ -34,6 +36,24 @@
 
 
     </tbody>
+   
   </table>
+  <nav class="d-flex justify-content-end" *ngIf="listPatients.length > 15" aria-label="pagination">
+    <ul class="pagination">
+      <li class="page-item  ">
+        <a class="page-link bg-light text-dark " href="#" aria-label="Previous">
+          <span class="" aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item "><a class="page-link bg-light text-dark" href="#">1</a></li>
+      <li class="page-item"><a class="page-link bg-light text-dark" href="#">2</a></li>
+      <li class="page-item "><a class="page-link bg-light text-dark" href="#">3</a></li>
+      <li class="page-item bg-light text-dark">
+        <a class="page-link bg-light text-dark" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
   <h5 *ngIf="listPatients.length == 0">Sin pacientes actualmente.</h5>
 </div>

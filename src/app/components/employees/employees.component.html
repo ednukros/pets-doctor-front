@@ -1,1 +1,27 @@
-<p>employees works!</p>
+<div class="container pt-4">
+    <h6 class="display-6">Gestión de empleados</h6>
+<div class="container-fluid d-flex py-3  gap-3">
+  <div *ngFor="let employee of listEmployees" class="card p-2 bg-light  " style="width: 25rem;">
+    <div class="d-flex ">
+      <img src="{{employee.image}}" class="card-img-top w-25 h-50 " alt="...">
+      <div class="card-body">
+        <h5 class="card-title mb-3 border-bottom ">{{employee.name}}</h5>
+        <p><span class="fw-bold ">Especialidad:</span> {{employee.speciality}}</p>
+
+        <p><span class="fw-bold ">Teléfono:</span> {{employee.phoneNumber}}</p>
+        <p><span class="fw-bold ">Email:</span> {{employee.email}}</p>
+
+
+
+
+      </div>
+    </div>
+    <div class="d-flex justify-content-evenly  ">
+      <a href="#" class="btn btn-primary">Gestionar horario</a>
+      <a href="#" class="btn btn-secondary">Gestionar citas</a>
+    </div>
+
+  </div>
+</div>
+
+</div>
