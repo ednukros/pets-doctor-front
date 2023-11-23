@@ -27,10 +27,12 @@
         <td>{{ patient.next_appointment }}</td>
         <td>{{ patient.phoneNumber}}</td>
 
-        <td>
+        <td class="text-center">
             <button routerLink="/patient/{{patient.id}}" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye-fill"></i></button>
             <button   routerLink="/editar/{{patient.id}}" type="button" class="btn btn-warning btn-sm ms-2"><i class="bi bi-pencil-fill"></i></button>
             <button (click)="deletePatient(patient.id!)" type="button" class="btn bg-danger  btn-sm ms-2"><i class="bi bi-trash3-fill"></i></button>
+            <button  type="button" class="btn bg-secondary fw-bold text-white   btn-sm ms-2">Dar cita</button>
+
         </td>
       </tr>
 

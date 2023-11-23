@@ -1,5 +1,9 @@
 <div class="container pt-4">
-    <h6 class="display-6">Gestión de empleados</h6>
+    <div class="d-flex justify-content-between mb-3 ">
+      <h6 class="display-6">Gestión de empleados</h6>
+    <button type="button" class="rounded-6 btn-primary btn-sm h-25 " routerLink="/añadir" >Nuevo empleado</button>
+
+    </div>
 <div class="container-fluid d-flex py-3  gap-3">
   <div *ngFor="let employee of listEmployees" class="card p-2 bg-light  " style="width: 25rem;">
     <div class="d-flex ">

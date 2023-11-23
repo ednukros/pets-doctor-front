@@ -14,13 +14,14 @@ import { HttpClientModule } from '@angular/common/http'
 import { ToastrModule } from 'ngx-toastr';
 
 //componentes
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 import { PatientsComponent } from './components/patients/patients.component';
 import { AddEditPatientComponent } from './components/add-edit-patient/add-edit-patient.component';
 import { PatientDetailsComponent } from './components/patient-details/patient-details.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EmployeesComponent } from './components/employees/employees.component';
 import { AppointmentsComponent } from './components/appointments/appointments.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AppointmentsComponent } from './components/appointments/appointments.co
     PatientDetailsComponent,
     EmployeesComponent,
     AppointmentsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
